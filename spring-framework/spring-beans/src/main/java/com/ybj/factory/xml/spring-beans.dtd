@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF_8" ?>
+
+
+<!ELEMENT beans (bean*)>
+<!ELEMENT bean (constructor-arg?, property*, lookup-method?, description?, meta?, qualifier?, replaced-method?)>
+<!ELEMENT constructor-arg (#PCDATA)>
+<!ELEMENT property (#PCDATA)>
+<!ELEMENT lookup-method (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+<!ELEMENT meta (#PCDATA)>
+<!ELEMENT qualifier (#PCDATA)>
+<!ELEMENT replaced-method (#PCDATA)>
+
+<!ATTLIST bean id CDATA #REQUIRED>
+<!ATTLIST bean class CDATA #REQUIRED>
+<!ATTLIST bean name CDATA #IMPLIED>
+<!ATTLIST bean init-method CDATA #IMPLIED>
+<!ATTLIST bean depends-on CDATA #IMPLIED>
+<!ATTLIST bean abstract CDATA #IMPLIED>
+<!ATTLIST bean autowire-candidate CDATA #IMPLIED>
+<!ATTLIST bean autowire CDATA #IMPLIED>
+<!ATTLIST bean factory-bean CDATA #IMPLIED>
+<!ATTLIST bean destroy-method CDATA #IMPLIED>
+<!ATTLIST bean scope CDATA #IMPLIED>
+<!ATTLIST bean factory-method CDATA #IMPLIED>
+<!ATTLIST bean lazy-init CDATA #IMPLIED>
+<!ATTLIST bean parent CDATA #IMPLIED>
+<!ATTLIST bean primary CDATA #IMPLIED>
