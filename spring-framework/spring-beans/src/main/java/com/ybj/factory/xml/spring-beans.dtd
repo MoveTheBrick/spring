@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF_8" ?>
 
 
-<!ELEMENT beans (bean*)>
+<!ELEMENT beans (bean*, import* , context:component-scan*)>
+<!ELEMENT import (#PCDATA)>
+<!ELEMENT context:component-scan (#PCDATA)>
 <!ELEMENT bean (constructor-arg?, property*, lookup-method?, description?, meta?, qualifier?, replaced-method?)>
 <!ELEMENT constructor-arg (#PCDATA)>
 <!ELEMENT property (#PCDATA)>
@@ -11,6 +13,9 @@
 <!ELEMENT qualifier (#PCDATA)>
 <!ELEMENT replaced-method (#PCDATA)>
 
+<!--import的属性-->
+<!ATTLIST import resource CDATA #REQUIRED>
+<!--bean的属性-->
 <!ATTLIST bean id CDATA #REQUIRED>
 <!ATTLIST bean class CDATA #REQUIRED>
 <!ATTLIST bean name CDATA #IMPLIED>

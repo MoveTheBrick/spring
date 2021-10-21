@@ -1,5 +1,8 @@
 package com.ybj.factory;
 
+import com.ybj.exception.BeansException;
+import com.ybj.exception.NoSuchBeanDefinitionException;
+
 /**
  * @PACKAGE_NAME: com.ybj.factory
  * @NAME: BeanFactory
@@ -13,23 +16,24 @@ public interface BeanFactory {
 
     String FACTORY_BEAN_PREFIX = "&";
 
-//    Object getBean(String name) throws BeansException;
-//
-//    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
-//
-//    Object getBean(String name, Object... args) throws BeansException;
-//
-//    <T> T getBean(Class<T> requiredType) throws BeansException;
+    // 通过beanName获取
+    Object getBean(String name) throws BeansException;
+    // 通过必要的beanType和beanName获取
+    <T> T getBean(String name, Class<T> requiredType) throws BeansException;
+    //
+    Object getBean(String name, Object... args) throws BeansException;
+    // 通过type获取
+    <T> T getBean(Class<T> requiredType) throws BeansException;
 //
 //    <T> T getBean(Class<T> requiredType, Object... args) throws BeansException;
 //
 //    <T> ObjectProvider<T> getBeanProvider(Class<T> requiredType);
 //
 //    <T> ObjectProvider<T> getBeanProvider(ResolvableType requiredType);
+    // 容器中是否包含该bean
+    boolean containsBean(String name);
 //
-//    boolean containsBean(String name);
-//
-//    boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
+    boolean isSingleton(String name) throws NoSuchBeanDefinitionException;
 //
 //    boolean isPrototype(String name) throws NoSuchBeanDefinitionException;
 //
